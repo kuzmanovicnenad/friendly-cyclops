@@ -3,9 +3,6 @@ import { Path, Friends, Friend } from './interface';
 import { each, indexOf, clone } from 'lodash';
 
 export class SimpleSearch extends Search {
-    constructor(protected friends: Friends = {}) {
-        super(friends);
-    }
 
     public getConnections(personName: string): Path[] {
         return this.getAllConnections(personName)
@@ -15,7 +12,6 @@ export class SimpleSearch extends Search {
         let myFriends = this.friends[name].friends;
         let result: Path[] = [];
         each(myFriends, friendName => this.connections(friendName, [], result))
-
         return result;
     }
 

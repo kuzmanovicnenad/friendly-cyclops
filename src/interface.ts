@@ -1,6 +1,7 @@
 export type Friend = {
     name: string;
     friends: string[];
+    indexedFriends?: number[]; // Uint8Array?
 };
 
 export interface Friends {
